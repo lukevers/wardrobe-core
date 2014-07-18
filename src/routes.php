@@ -10,7 +10,7 @@ Route::group(Config::get('core::routes.blog_group_rules'), function() use ($ward
 	Route::get('page/{slug}', array('uses' => $wardrobeControllers.'PageController@show', 'as' => 'wardrobe.pages.show'));
 	Route::get('post/{slug}', array('uses' => $wardrobeControllers.'PostController@show', 'as' => 'wardrobe.posts.show'));
 	Route::get('post/preview/{id}', array('uses' => $wardrobeControllers.'PostController@preview', 'as' => 'wardrobe.posts.preview'));
-	Route::get('tag/{tag}', array('uses' => $wardrobeControllers.'PostController@tag', 'as' => 'wardrobe.posts.tags'));
+	Route::get(Config::get('core::routes.tag_group_rules')['prefix'].'/{tag}', array('uses' => $wardrobeControllers.'PostController@tag', 'as' => 'wardrobe.posts.tags'));
 	Route::get('archive', array('uses' => $wardrobeControllers.'PostController@index', 'as' => 'wardrobe.posts.archive'));
 	Route::get('rss', array('uses' => $wardrobeControllers.'RssController@index', 'as' => 'wardrobe.posts.rss'));
 

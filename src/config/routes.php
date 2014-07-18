@@ -15,4 +15,8 @@ return array(
 		'prefix' => 'api',
 		// 'domain' => 'blog.site.com'
 	),
+
+	'tag_group_rules' => array(
+		'prefix' => 'tag'
+	),
 );
